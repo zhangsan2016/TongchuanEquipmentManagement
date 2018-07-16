@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingTop="5dp">
+
+        <TextView
+            android:id="@+id/tv_ip"
+            style="@style/list_device_item_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="192.168.1.120" />
+
+        <Button
+            android:id="@+id/btn_restart"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:focusable="false"
+            android:text="重启" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <TextView
+                style="@style/list_device_item_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="电压: " />
+
+            <TextView
+                android:id="@+id/tv_volt"
+                style="@style/list_device_item_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.00" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <TextView
+                style="@style/list_device_item_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|left"
+                android:text="电流: " />
+
+            <TextView
+                android:id="@+id/tv_ampere"
+                style="@style/list_device_item_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" ???" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <TextView
+                style="@style/list_device_item_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|left"
+                android:text="功率: " />
+
+            <TextView
+                android:id="@+id/tv_power"
+                style="@style/list_device_item_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" ???" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <TextView
+                style="@style/list_device_item_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="光照: " />
+
+            <TextView
+                android:id="@+id/tv_lux"
+                style="@style/list_device_item_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" ???" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <TextView
+                style="@style/list_device_item_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|left"
+                android:text="温度: " />
+
+            <TextView
+                android:id="@+id/tv_temp"
+                style="@style/list_device_item_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" ???" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <TextView
+                style="@style/list_device_item_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|left"
+                android:text="湿度: " />
+
+            <TextView
+                android:id="@+id/tv_hum"
+                style="@style/list_device_item_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" ???" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_electric_parameter1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/textView3"
+                style="@style/list_device_item_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="气压: " />
+
+            <TextView
+                android:id="@+id/tv_pressure"
+                style="@style/list_device_item_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" ???" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_electric_parameter2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_below="@id/ll_electric_parameter1"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/textView4"
+                style="@style/list_device_item_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|left"
+                android:text="PM: " />
+
+            <TextView
+                android:id="@+id/tv_pm"
+                style="@style/list_device_item_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" ???" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_below="@id/ll_electric_parameter1"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <TextView
+                style="@style/list_device_item_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|left"
+                android:text="水位值: " />
+
+            <TextView
+                android:id="@+id/tv_waterValue"
+                style="@style/list_device_item_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" ???" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

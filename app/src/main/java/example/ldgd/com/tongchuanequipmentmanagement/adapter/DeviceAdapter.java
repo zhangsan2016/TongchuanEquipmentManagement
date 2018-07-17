@@ -1,10 +1,12 @@
 package example.ldgd.com.tongchuanequipmentmanagement.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -67,6 +69,8 @@ public class DeviceAdapter extends BaseAdapter {
 
             viewHoder.btn_restart = view.findViewById(R.id.btn_restart);
             viewHoder.tv_ip = view.findViewById(R.id.tv_ip);
+            viewHoder.ll_item = view.findViewById(R.id.ll_item);
+
             view.setTag(viewHoder);
         } else {
             viewHoder = (ViewHoder) view.getTag();
@@ -86,13 +90,16 @@ public class DeviceAdapter extends BaseAdapter {
         viewHoder.tv_waterValue.setText(deviceParameter.getWaterValue());
 
         viewHoder.tv_ip.setText(deviceParameter.getDeviceIp());
-
         viewHoder.btn_restart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(mContext, "btn_restart 被点击" + position, Toast.LENGTH_SHORT).show();
             }
         });
+
+        if(position == 2){
+            viewHoder.ll_item.setBackgroundColor(Color.RED);
+        }
 
 
         return view;
@@ -115,6 +122,7 @@ public class DeviceAdapter extends BaseAdapter {
 
         public Button btn_restart;  // 重启
         public TextView tv_ip; // ip地址
+        public LinearLayout ll_item;
 
     }
 

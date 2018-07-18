@@ -8,8 +8,6 @@ import java.nio.ByteBuffer;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.atomic.AtomicLong;
 
-import example.ldgd.com.tongchuanequipmentmanagement.utils.LogUtil;
-
 public abstract class UDPClientBase implements Runnable {
 
 	protected DatagramSocket ds;
@@ -211,7 +209,6 @@ public abstract class UDPClientBase implements Runnable {
 		if (System.currentTimeMillis() - lastSent < heartbeatInterval * 1000) {
 			return;
 		}
-		LogUtil.e("send heartbeatInterval");
 		byte[] buffer = new byte[Message.CLIENT_MESSAGE_MIN_LENGTH];
 		ByteBuffer.wrap(buffer).put((byte) Message.version).put((byte) appid)
 				.put((byte) Message.CMD_0x00).put(uuid).putChar((char) 0);

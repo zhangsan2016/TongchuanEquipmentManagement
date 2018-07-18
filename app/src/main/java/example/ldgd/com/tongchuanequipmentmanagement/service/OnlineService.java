@@ -121,6 +121,15 @@ public class OnlineService extends Service {
 
 
     /**
+     * 获取NotificationManager
+     *
+     * @return
+     */
+    private NotificationManager getNotificationManager() {
+        return (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+    }
+
+    /**
      * 获取Notification
      *
      * @param title
@@ -168,14 +177,6 @@ public class OnlineService extends Service {
     }
 
 
-    /**
-     * 获取NotificationManager
-     *
-     * @return
-     */
-    private NotificationManager getNotificationManager() {
-        return (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-    }
 
 
     public static class AlarmReceiver extends BroadcastReceiver {

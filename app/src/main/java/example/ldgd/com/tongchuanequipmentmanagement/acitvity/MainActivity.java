@@ -1,5 +1,6 @@
 package example.ldgd.com.tongchuanequipmentmanagement.acitvity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -19,6 +20,7 @@ import java.util.List;
 import example.ldgd.com.tongchuanequipmentmanagement.R;
 import example.ldgd.com.tongchuanequipmentmanagement.adapter.DeviceAdapter;
 import example.ldgd.com.tongchuanequipmentmanagement.entity.DeviceParameter;
+import example.ldgd.com.tongchuanequipmentmanagement.service.OnlineService;
 import example.ldgd.com.tongchuanequipmentmanagement.utils.LogUtil;
 import example.ldgd.com.tongchuanequipmentmanagement.utils.UrlUtil;
 import okhttp3.OkHttpClient;
@@ -67,6 +69,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void setListener() {
         mListView.setOnItemClickListener(new MyOnItemClickListener());
+
+       // 发送心跳包
+        Intent intent = new Intent(MainActivity.this, OnlineService.class);
+        startService(intent);
     }
 
 
@@ -145,6 +151,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * 解析json
+     *
      * @param json
      */
     private void parseJson(String json) {

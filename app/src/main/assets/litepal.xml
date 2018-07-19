@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+
+    <dbname value="alarm" />
+    <version value="1" />
+
+
+    <list>
+
+        <mapping class="example.ldgd.com.tongchuanequipmentmanagement.entity.Alarm" />
+
+    </list>
+
+
+</litepal>

@@ -21,6 +21,7 @@
 
     <!-- 铜川设备管理app、读取设备参数显示各个参数的值，并有报警和异常显示-->
     <application
+        android:name=".appliction.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/th_birthday"
         android:label="@string/app_name"

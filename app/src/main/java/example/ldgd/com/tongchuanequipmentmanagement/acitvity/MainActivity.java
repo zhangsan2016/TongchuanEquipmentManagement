@@ -19,6 +19,7 @@ import java.util.List;
 
 import example.ldgd.com.tongchuanequipmentmanagement.R;
 import example.ldgd.com.tongchuanequipmentmanagement.adapter.DeviceAdapter;
+import example.ldgd.com.tongchuanequipmentmanagement.entity.Alarm;
 import example.ldgd.com.tongchuanequipmentmanagement.entity.DeviceParameter;
 import example.ldgd.com.tongchuanequipmentmanagement.service.OnlineService;
 import example.ldgd.com.tongchuanequipmentmanagement.utils.LogUtil;
@@ -64,7 +65,31 @@ public class MainActivity extends AppCompatActivity {
 
         setListener();
 
+        initData();
 
+
+    }
+
+    private void initData() {
+        Alarm alarm = new Alarm();
+        alarm.setAlarmIp("192.168.1.11");
+        alarm.setAlarmTime(System.currentTimeMillis() + "");
+        alarm.setNotes("报警，有异常");
+        alarm.save();
+
+
+        Alarm alarm2 = new Alarm();
+        alarm2.setAlarmIp("192.168.1.95");
+        alarm2.setAlarmTime(System.currentTimeMillis() + "");
+        alarm2.setNotes("报警，有异常2");
+        alarm2.save();
+
+
+        Alarm alarm3 = new Alarm();
+        alarm3.setAlarmIp("192.168.1.13");
+        alarm3.setAlarmTime(System.currentTimeMillis() + "");
+        alarm3.setNotes("报警，有异常3");
+        alarm3.save();
     }
 
     private void setListener() {

@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
         setListener();
 
-        initData();
+     //   initData();
 
 
     }

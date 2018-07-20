@@ -4,11 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="example.ldgd.com.tongchuanequipmentmanagement.acitvity.MainActivity">
+
+
+    <!--  android:background 由于AndroidManifest中修改成了淡色背景，系统为了解决其它（例如textview）的显示效果做颜色区分，
+     toolbar的元素会自动加深所有色系。所以为了能让toolbar单独使用深色主题，就使用 android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+     ，但是指定完后又会出现新的问题，如果Toobar中有菜单按钮，那么弹出的菜单选项也会变成深色主题，这样就会再次变得难看，于是使用了
+      app:popupTheme="@style/ThemeOverlay.AppCompat.Light" 属性，单独的把菜单选项指定了淡色主题-->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:text="Hello World!"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     <ListView
         android:id="@+id/lv_device"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+
+
 
 </LinearLayout>

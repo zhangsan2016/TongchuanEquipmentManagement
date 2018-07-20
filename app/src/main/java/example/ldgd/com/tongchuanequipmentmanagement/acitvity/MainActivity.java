@@ -6,6 +6,8 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -64,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
         // 使用toolbar
         toolbar = (Toolbar) this.findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar.collapseActionView();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         initView();
 
@@ -75,6 +79,31 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_search:
+                Toast.makeText(this, "Search", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.action_add:
+                Toast.makeText(this, "Add", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.action_setting:
+                Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
 
     private void initData() {
         Alarm alarm = new Alarm();
@@ -101,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
     private void setListener() {
         mListView.setOnItemClickListener(new MyOnItemClickListener());
 
-       // 发送心跳包
+        // 发送心跳包
         Intent intent = new Intent(MainActivity.this, OnlineService.class);
         startService(intent);
     }
